@@ -1,0 +1,19 @@
+
+Project Reference
+
+API -> dotnet add reference ../Infrastructure
+Infrastructure -> dotnet add reference ../Core
+
+
+before Moving
+
+-> dotnet ef migrations add init -o Data/Migrations
+-> dotnet ef database update 
+
+After Moving
+
+Need to
+-> dotnet-ef database drop -p infrastructure -s api
+-> dotnet ef migrations remove -p infrastructure -s api
+-> dotnet ef migrations add init -p infrastructure -s api -o Data/Migrations
+-> dotnet ef database update -p infrastructure -s api

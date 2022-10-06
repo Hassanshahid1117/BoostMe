@@ -13,6 +13,6 @@ namespace Infrastructure.Data
         {
         }
 
-        public DbSet<Product> MyProperty { get; set; }
+        public DbSet<Product> Product { get; set; }
     }
 }
